@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>3. 데이터 가공 · GitBook</title>
+        <title>3-2 영화진흥위원회 OPENAPI 사용2 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="3.1.html" />
+    <link rel="next" href="4.html" />
     
     
-    <link rel="prev" href="2.html" />
+    <link rel="prev" href="3.1.html" />
     
 
     </head>
@@ -129,7 +129,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.1.3" data-path="3.html">
+        <li class="chapter " data-level="1.1.3" data-path="3.html">
             
                 <a href="3.html">
             
@@ -155,7 +155,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.5" data-path="3.2.html">
+        <li class="chapter active" data-level="1.1.5" data-path="3.2.html">
             
                 <a href="3.2.html">
             
@@ -294,7 +294,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >3. 데이터 가공</a>
+        <a href="." >3-2 영화진흥위원회 OPENAPI 사용2</a>
     </h1>
 </div>
 
@@ -309,25 +309,82 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="3-&#xB370;&#xC774;&#xD130;-&#xAC00;&#xACF5;">3. &#xB370;&#xC774;&#xD130; &#xAC00;&#xACF5;</h3>
-<h4 id="31-&#xB370;&#xC774;&#xD130;-&#xCD94;&#xCD9C;-&#xBC0F;-&#xC815;&#xC81C;">3.1 &#xB370;&#xC774;&#xD130; &#xCD94;&#xCD9C; &#xBC0F; &#xC815;&#xC81C;</h4>
-<blockquote>
-<p>API &#xC694;&#xCCAD;&#xC744; &#xD1B5;&#xD574; &#xC77C;&#xBCC4; &#xBC15;&#xC2A4;&#xC624;&#xD53C;&#xC2A4; &#xC815;&#xBCF4;&#xB97C; &#xC800;&#xC7A5;&#xD568;</p>
-<p>&#xD2B8;&#xC704;&#xD130; &#xD06C;&#xB864;&#xB9C1;&#xC744; &#xD1B5;&#xD574; &#xD574;&#xB2F9; &#xC601;&#xD654;&#xC5D0; &#xB300;&#xD55C; &#xC758;&#xACAC;&#xC744; &#xC800;&#xC7A5;&#xD558;&#xACE0; &#xD574;&#xB2F9; &#xC758;&#xACAC;&#xC774; &#xAE0D;&#xC815;&#xC778;&#xC9C0; &#xBD80;&#xC815;&#xC778;&#xC9C0; &#xD30C;&#xC545;&#xD568;</p>
-</blockquote>
-<h4 id="32-&#xB370;&#xC774;&#xD130;-&#xBCD1;&#xD569;">3.2 &#xB370;&#xC774;&#xD130; &#xBCD1;&#xD569;</h4>
-<blockquote>
-<p>JSON &#xD30C;&#xC77C;&#xC744; CSV &#xD30C;&#xC77C;&#xB85C; &#xBCD1;&#xD569;&#xD55C; &#xB4A4; &#xB370;&#xC774;&#xD130;&#xBCA0;&#xC774;&#xC2A4;&#xC5D0; &#xC785;&#xB825; </p>
-</blockquote>
-<h4 id="33-&#xB370;&#xC774;&#xD130;-&#xD3EC;&#xB9F7;-&#xBCC0;&#xD658;">3.3 &#xB370;&#xC774;&#xD130; &#xD3EC;&#xB9F7; &#xBCC0;&#xD658;</h4>
-<blockquote>
-<p>3.2&#xC758; &#xACFC;&#xC815;&#xC5D0;&#xC11C; &#xC801;&#xC808;&#xD55C; &#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xB370;&#xC774;&#xD130; &#xBCC0;&#xD658;</p>
-</blockquote>
-<h4 id="34-&#xB370;&#xC774;&#xD130;&#xB97C;-db&#xC5D0;-&#xC0BD;&#xC785;">3.4 &#xB370;&#xC774;&#xD130;&#xB97C; DB&#xC5D0; &#xC0BD;&#xC785;</h4>
-<blockquote>
-<p>CSV &#xD30C;&#xC77C;&#xC744; &#xB370;&#xC774;&#xD130;&#xBCA0;&#xC774;&#xC2A4;&#xC5D0; &#xC0BD;&#xC785;</p>
-</blockquote>
-<pre><code class="lang-python"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+                                <h3 id="3-kobis-openapi">3. KOBIS OPENAPI</h3>
+<p>&#xC601;&#xD654;&#xAD00; &#xC785;&#xC7A5;&#xAD8C; &#xD1B5;&#xD569; &#xC804;&#xC0B0;&#xB9DD; OPENAPI&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC77C;&#xC77C; &#xBC15;&#xC2A4;&#xC624;&#xD53C;&#xC2A4; &#xC790;&#xB8CC;&#xB97C; &#xAC00;&#xC838;&#xC624;&#xACE0; JSON&#xD30C;&#xC77C;&#xB85C; &#xC800;&#xC7A5;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> requests
+<span class="hljs-keyword">import</span> json
+<span class="hljs-keyword">import</span> calendar
+<span class="hljs-keyword">from</span> tqdm <span class="hljs-keyword">import</span> tqdm
+<span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> date, timedelta
+
+key=<span class="hljs-string">&apos;ad816991534afeaef71f07e7336b0d61&apos;</span>
+movie_info_path=<span class="hljs-string">&apos;/root/movie/data/&apos;</span>
+</code></pre>
+<p>&#xD3F4;&#xB354;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD55C; &#xB4A4; &#xC5C6;&#xC73C;&#xBA74; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xD568;&#xC218;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">check_dir</span><span class="hljs-params">(start_date,end_date)</span>:</span>    
+    start_year = int(start_date.year)
+    end_year = int(end_date.year)
+    year = start_year
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> tqdm(range(start_year,end_year+<span class="hljs-number">1</span>)):        
+        <span class="hljs-keyword">if</span>(os.path.isdir(movie_info_path+str(year))!=<span class="hljs-number">1</span>):
+            os.mkdir(movie_info_path+str(year)+<span class="hljs-string">&apos;/&apos;</span>)
+            print(<span class="hljs-string">&quot;create &quot;</span>+str(year)+<span class="hljs-string">&quot; folder&quot;</span>) 
+
+        <span class="hljs-keyword">if</span>(os.path.isdir(movie_info_path+str(year)+<span class="hljs-string">&apos;_K&apos;</span>)!=<span class="hljs-number">1</span>):
+            os.mkdir(movie_info_path+str(year)+<span class="hljs-string">&apos;_K/&apos;</span>)
+            print(<span class="hljs-string">&quot;create &quot;</span>+str(year)+<span class="hljs-string">&quot;_K folder&quot;</span>)   
+
+        <span class="hljs-keyword">if</span>(os.path.isdir(movie_info_path+str(year)+<span class="hljs-string">&apos;_F&apos;</span>)!=<span class="hljs-number">1</span>):
+            os.mkdir(movie_info_path+str(year)+<span class="hljs-string">&apos;_F/&apos;</span>)
+            print(<span class="hljs-string">&quot;create &quot;</span>+str(year)+<span class="hljs-string">&quot;_F folder&quot;</span>)    
+        year += <span class="hljs-number">1</span>
+</code></pre>
+<p>&#xC77C;&#xC77C; &#xBC15;&#xC2A4;&#xC624;&#xD53C;&#xC2A4; &#xC790;&#xB8CC;&#xB97C; &#xCC3E;&#xACE0; &#xC5C6;&#xC73C;&#xBA74; API&#xB97C; &#xD1B5;&#xD574; &#xC790;&#xB8CC;&#xB97C; &#xBC1B;&#xC544;&#xC628;&#xB2E4;</p>
+<p>&#xD30C;&#xC77C;&#xC740; JSON &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xD574;&#xB2F9; &#xD3F4;&#xB354;&#xC5D0; &#xC800;&#xC7A5;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">daily_box_office_to_json</span><span class="hljs-params">(start_date,end_date)</span>:</span>    
+    tmp_date = start_date
+    startDt = int(str(start_date)[<span class="hljs-number">0</span>:<span class="hljs-number">4</span>]+str(start_date)[<span class="hljs-number">5</span>:<span class="hljs-number">7</span>]+str(start_date)[<span class="hljs-number">8</span>:<span class="hljs-number">10</span>])
+    endDt = int(str(end_date)[<span class="hljs-number">0</span>:<span class="hljs-number">4</span>]+str(end_date)[<span class="hljs-number">5</span>:<span class="hljs-number">7</span>]+str(end_date)[<span class="hljs-number">8</span>:<span class="hljs-number">10</span>])
+    days = end_date - start_date
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> tqdm(range(<span class="hljs-number">0</span>,days.days+<span class="hljs-number">1</span>)):
+        targetDt = int(str(tmp_date)[<span class="hljs-number">0</span>:<span class="hljs-number">4</span>]+str(tmp_date)[<span class="hljs-number">5</span>:<span class="hljs-number">7</span>]+str(tmp_date)[<span class="hljs-number">8</span>:<span class="hljs-number">10</span>])
+
+        <span class="hljs-keyword">if</span>(os.path.isfile(<span class="hljs-string">&quot;/root/movie/data/&quot;</span>+str(targetDt)[<span class="hljs-number">0</span>:<span class="hljs-number">4</span>]+<span class="hljs-string">&apos;/&apos;</span>+str(targetDt)+<span class="hljs-string">&apos;.json&apos;</span>)!=<span class="hljs-number">1</span>):
+            url=<span class="hljs-string">&apos;http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=&apos;</span>+key+<span class="hljs-string">&apos;&amp;targetDt=&apos;</span>+str(targetDt)
+            res = requests.get(url)
+            text = res.text
+            d = json.loads(text)
+            <span class="hljs-keyword">with</span> open(<span class="hljs-string">&apos;data/&apos;</span>+str(targetDt)[<span class="hljs-number">0</span>:<span class="hljs-number">4</span>]+<span class="hljs-string">&apos;/&apos;</span>+str(targetDt)+<span class="hljs-string">&apos;.json&apos;</span>, <span class="hljs-string">&apos;w&apos;</span>, encoding=<span class="hljs-string">&quot;utf-8&quot;</span>) <span class="hljs-keyword">as</span> make_file:
+                json.dump(d, make_file, ensure_ascii=<span class="hljs-keyword">False</span>, indent=<span class="hljs-string">&quot;\t&quot;</span>)
+
+        <span class="hljs-keyword">if</span>(os.path.isfile(<span class="hljs-string">&quot;/root/movie/data/&quot;</span>+str(targetDt)[<span class="hljs-number">0</span>:<span class="hljs-number">4</span>]+<span class="hljs-string">&apos;_K/&apos;</span>+str(targetDt)+<span class="hljs-string">&apos;_K.json&apos;</span>)!=<span class="hljs-number">1</span>):
+            url=<span class="hljs-string">&apos;http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=&apos;</span>+key+<span class="hljs-string">&apos;&amp;targetDt=&apos;</span>+str(targetDt)+<span class="hljs-string">&apos;&amp;repNationCd=K&apos;</span>
+            res = requests.get(url)
+            text = res.text
+            d = json.loads(text)
+            <span class="hljs-keyword">with</span> open(<span class="hljs-string">&apos;data/&apos;</span>+str(targetDt)[<span class="hljs-number">0</span>:<span class="hljs-number">4</span>]+<span class="hljs-string">&apos;_K/&apos;</span>+str(targetDt)+<span class="hljs-string">&apos;_K.json&apos;</span>, <span class="hljs-string">&apos;w&apos;</span>, encoding=<span class="hljs-string">&quot;utf-8&quot;</span>) <span class="hljs-keyword">as</span> make_file:
+                json.dump(d, make_file, ensure_ascii=<span class="hljs-keyword">False</span>, indent=<span class="hljs-string">&quot;\t&quot;</span>)
+
+        <span class="hljs-keyword">if</span>(os.path.isfile(<span class="hljs-string">&quot;/root/movie/data/&quot;</span>+str(targetDt)[<span class="hljs-number">0</span>:<span class="hljs-number">4</span>]+<span class="hljs-string">&apos;_F/&apos;</span>+str(targetDt)+<span class="hljs-string">&apos;_F.json&apos;</span>)!=<span class="hljs-number">1</span>):
+            url=<span class="hljs-string">&apos;http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=&apos;</span>+key+<span class="hljs-string">&apos;&amp;targetDt=&apos;</span>+str(targetDt)+<span class="hljs-string">&apos;&amp;repNationCd=F&apos;</span>
+            res = requests.get(url)
+            text = res.text
+            d = json.loads(text)
+            <span class="hljs-keyword">with</span> open(<span class="hljs-string">&apos;data/&apos;</span>+str(targetDt)[<span class="hljs-number">0</span>:<span class="hljs-number">4</span>]+<span class="hljs-string">&apos;_F/&apos;</span>+str(targetDt)+<span class="hljs-string">&apos;_F.json&apos;</span>, <span class="hljs-string">&apos;w&apos;</span>, encoding=<span class="hljs-string">&quot;utf-8&quot;</span>) <span class="hljs-keyword">as</span> make_file:
+                json.dump(d, make_file, ensure_ascii=<span class="hljs-keyword">False</span>, indent=<span class="hljs-string">&quot;\t&quot;</span>)
+
+        tmp_date += timedelta(<span class="hljs-number">1</span>)
+</code></pre>
+<p>&#xC0D8;&#xD50C; &#xB370;&#xC774;&#xD130;&#xB85C; 2017&#xB144; &#xC804;&#xCCB4; &#xC790;&#xB8CC;&#xB97C; &#xBC1B;&#xC544;&#xC628;&#xB2E4;</p>
+<pre><code class="lang-python">start_date = date(<span class="hljs-number">2017</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>)
+end_date = date(<span class="hljs-number">2017</span>,<span class="hljs-number">12</span>,<span class="hljs-number">31</span>)
+check_dir(start_date,end_date)
+daily_box_office_to_json(start_date,end_date)
+</code></pre>
+<pre><code>100%|&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;| 1/1 [00:00&lt;00:00, 576.85it/s]
+100%|&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;| 365/365 [00:00&lt;00:00, 29090.58it/s]
+</code></pre><pre><code class="lang-python"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
 <span class="hljs-keyword">import</span> requests
 <span class="hljs-keyword">import</span> datetime
 <span class="hljs-keyword">import</span> json
@@ -336,29 +393,221 @@
 
 my_date = datetime.date(<span class="hljs-number">2017</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>)
 </code></pre>
-<pre><code class="lang-python"><span class="hljs-comment">#&#xC77C;&#xBCC4; &#xB370;&#xC774;&#xD130;  : csv&#xB85C; &#xC800;&#xC7A5; &#xD568;&#xC218; &#xC815;&#xC758; </span>
+<pre><code class="lang-python">start_date = date(<span class="hljs-number">2017</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>)
+targetDt = str(start_date)[<span class="hljs-number">0</span>:<span class="hljs-number">4</span>]+str(start_date)[<span class="hljs-number">5</span>:<span class="hljs-number">7</span>]+str(start_date)[<span class="hljs-number">8</span>:<span class="hljs-number">10</span>]
+<span class="hljs-keyword">with</span> open(<span class="hljs-string">&apos;data/&apos;</span>+str(targetDt)[<span class="hljs-number">0</span>:<span class="hljs-number">4</span>]+<span class="hljs-string">&apos;/&apos;</span>+str(targetDt)+<span class="hljs-string">&apos;.json&apos;</span>, <span class="hljs-string">&apos;r&apos;</span>, encoding=<span class="hljs-string">&quot;utf-8&quot;</span>) <span class="hljs-keyword">as</span> read_file:
+    d = json.load(read_file)
+d
+</code></pre>
+<pre><code>{&apos;boxOfficeResult&apos;: {&apos;boxofficeType&apos;: &apos;&#xC77C;&#xBCC4; &#xBC15;&#xC2A4;&#xC624;&#xD53C;&#xC2A4;&apos;,
+  &apos;showRange&apos;: &apos;20170101~20170101&apos;,
+  &apos;dailyBoxOfficeList&apos;: [{&apos;rnum&apos;: &apos;1&apos;,
+    &apos;rank&apos;: &apos;1&apos;,
+    &apos;rankInten&apos;: &apos;0&apos;,
+    &apos;rankOldAndNew&apos;: &apos;OLD&apos;,
+    &apos;movieCd&apos;: &apos;20161725&apos;,
+    &apos;movieNm&apos;: &apos;&#xB9C8;&#xC2A4;&#xD130;&apos;,
+    &apos;openDt&apos;: &apos;2016-12-21&apos;,
+    &apos;salesAmt&apos;: &apos;4399793100&apos;,
+    &apos;salesShare&apos;: &apos;46.3&apos;,
+    &apos;salesInten&apos;: &apos;-183705150&apos;,
+    &apos;salesChange&apos;: &apos;-4&apos;,
+    &apos;salesAcc&apos;: &apos;44184434165&apos;,
+    &apos;audiCnt&apos;: &apos;506299&apos;,
+    &apos;audiInten&apos;: &apos;-31485&apos;,
+    &apos;audiChange&apos;: &apos;-5.9&apos;,
+    &apos;audiAcc&apos;: &apos;5441619&apos;,
+    &apos;scrnCnt&apos;: &apos;1245&apos;,
+    &apos;showCnt&apos;: &apos;5721&apos;},
+   {&apos;rnum&apos;: &apos;2&apos;,
+    &apos;rank&apos;: &apos;2&apos;,
+    &apos;rankInten&apos;: &apos;0&apos;,
+    &apos;rankOldAndNew&apos;: &apos;OLD&apos;,
+    &apos;movieCd&apos;: &apos;20163183&apos;,
+    &apos;movieNm&apos;: &apos;&#xB85C;&#xADF8; &#xC6D0;: &#xC2A4;&#xD0C0;&#xC6CC;&#xC988; &#xC2A4;&#xD1A0;&#xB9AC;&apos;,
+    &apos;openDt&apos;: &apos;2016-12-28&apos;,
+    &apos;salesAmt&apos;: &apos;1612424700&apos;,
+    &apos;salesShare&apos;: &apos;17.0&apos;,
+    &apos;salesInten&apos;: &apos;-351990650&apos;,
+    &apos;salesChange&apos;: &apos;-17.9&apos;,
+    &apos;salesAcc&apos;: &apos;6739961794&apos;,
+    &apos;audiCnt&apos;: &apos;173451&apos;,
+    &apos;audiInten&apos;: &apos;-40093&apos;,
+    &apos;audiChange&apos;: &apos;-18.8&apos;,
+    &apos;audiAcc&apos;: &apos;769938&apos;,
+    &apos;scrnCnt&apos;: &apos;810&apos;,
+    &apos;showCnt&apos;: &apos;3335&apos;},
+   {&apos;rnum&apos;: &apos;3&apos;,
+    &apos;rank&apos;: &apos;3&apos;,
+    &apos;rankInten&apos;: &apos;0&apos;,
+    &apos;rankOldAndNew&apos;: &apos;OLD&apos;,
+    &apos;movieCd&apos;: &apos;20162025&apos;,
+    &apos;movieNm&apos;: &apos;&#xC53D;&apos;,
+    &apos;openDt&apos;: &apos;2016-12-21&apos;,
+    &apos;salesAmt&apos;: &apos;943975500&apos;,
+    &apos;salesShare&apos;: &apos;9.9&apos;,
+    &apos;salesInten&apos;: &apos;-118258900&apos;,
+    &apos;salesChange&apos;: &apos;-11.1&apos;,
+    &apos;salesAcc&apos;: &apos;9147833289&apos;,
+    &apos;audiCnt&apos;: &apos;115152&apos;,
+    &apos;audiInten&apos;: &apos;-18516&apos;,
+    &apos;audiChange&apos;: &apos;-13.9&apos;,
+    &apos;audiAcc&apos;: &apos;1178327&apos;,
+    &apos;scrnCnt&apos;: &apos;721&apos;,
+    &apos;showCnt&apos;: &apos;1755&apos;},
+   {&apos;rnum&apos;: &apos;4&apos;,
+    &apos;rank&apos;: &apos;4&apos;,
+    &apos;rankInten&apos;: &apos;1&apos;,
+    &apos;rankOldAndNew&apos;: &apos;OLD&apos;,
+    &apos;movieCd&apos;: &apos;20144641&apos;,
+    &apos;movieNm&apos;: &apos;&#xD310;&#xB3C4;&#xB77C;&apos;,
+    &apos;openDt&apos;: &apos;2016-12-07&apos;,
+    &apos;salesAmt&apos;: &apos;736891900&apos;,
+    &apos;salesShare&apos;: &apos;7.7&apos;,
+    &apos;salesInten&apos;: &apos;-35339100&apos;,
+    &apos;salesChange&apos;: &apos;-4.6&apos;,
+    &apos;salesAcc&apos;: &apos;34692290064&apos;,
+    &apos;audiCnt&apos;: &apos;87966&apos;,
+    &apos;audiInten&apos;: &apos;-6799&apos;,
+    &apos;audiChange&apos;: &apos;-7.2&apos;,
+    &apos;audiAcc&apos;: &apos;4401830&apos;,
+    &apos;scrnCnt&apos;: &apos;576&apos;,
+    &apos;showCnt&apos;: &apos;1476&apos;},
+   {&apos;rnum&apos;: &apos;5&apos;,
+    &apos;rank&apos;: &apos;5&apos;,
+    &apos;rankInten&apos;: &apos;-1&apos;,
+    &apos;rankOldAndNew&apos;: &apos;OLD&apos;,
+    &apos;movieCd&apos;: &apos;20167904&apos;,
+    &apos;movieNm&apos;: &apos;&#xB77C;&#xB77C;&#xB79C;&#xB4DC;&apos;,
+    &apos;openDt&apos;: &apos;2016-12-07&apos;,
+    &apos;salesAmt&apos;: &apos;770889600&apos;,
+    &apos;salesShare&apos;: &apos;8.1&apos;,
+    &apos;salesInten&apos;: &apos;-162044100&apos;,
+    &apos;salesChange&apos;: &apos;-17.4&apos;,
+    &apos;salesAcc&apos;: &apos;20767028832&apos;,
+    &apos;audiCnt&apos;: &apos;87529&apos;,
+    &apos;audiInten&apos;: &apos;-21007&apos;,
+    &apos;audiChange&apos;: &apos;-19.4&apos;,
+    &apos;audiAcc&apos;: &apos;2472637&apos;,
+    &apos;scrnCnt&apos;: &apos;590&apos;,
+    &apos;showCnt&apos;: &apos;1578&apos;},
+   {&apos;rnum&apos;: &apos;6&apos;,
+    &apos;rank&apos;: &apos;6&apos;,
+    &apos;rankInten&apos;: &apos;0&apos;,
+    &apos;rankOldAndNew&apos;: &apos;OLD&apos;,
+    &apos;movieCd&apos;: &apos;20161872&apos;,
+    &apos;movieNm&apos;: &apos;&#xB108;&#xC758; &#xC774;&#xB984;&#xC740;.&apos;,
+    &apos;openDt&apos;: &apos;2017-01-04&apos;,
+    &apos;salesAmt&apos;: &apos;325811500&apos;,
+    &apos;salesShare&apos;: &apos;3.4&apos;,
+    &apos;salesInten&apos;: &apos;31854500&apos;,
+    &apos;salesChange&apos;: &apos;10.8&apos;,
+    &apos;salesAcc&apos;: &apos;640998500&apos;,
+    &apos;audiCnt&apos;: &apos;37418&apos;,
+    &apos;audiInten&apos;: &apos;3245&apos;,
+    &apos;audiChange&apos;: &apos;9.5&apos;,
+    &apos;audiAcc&apos;: &apos;74181&apos;,
+    &apos;scrnCnt&apos;: &apos;275&apos;,
+    &apos;showCnt&apos;: &apos;342&apos;},
+   {&apos;rnum&apos;: &apos;7&apos;,
+    &apos;rank&apos;: &apos;7&apos;,
+    &apos;rankInten&apos;: &apos;0&apos;,
+    &apos;rankOldAndNew&apos;: &apos;OLD&apos;,
+    &apos;movieCd&apos;: &apos;20162727&apos;,
+    &apos;movieNm&apos;: &apos;&#xB8E8;&#xB3CC;&#xD504;&#xC640; &#xB9CE;&#xC774;&#xC788;&#xC5B4;&apos;,
+    &apos;openDt&apos;: &apos;2016-12-28&apos;,
+    &apos;salesAmt&apos;: &apos;243890000&apos;,
+    &apos;salesShare&apos;: &apos;2.6&apos;,
+    &apos;salesInten&apos;: &apos;-23742600&apos;,
+    &apos;salesChange&apos;: &apos;-8.9&apos;,
+    &apos;salesAcc&apos;: &apos;926773600&apos;,
+    &apos;audiCnt&apos;: &apos;29910&apos;,
+    &apos;audiInten&apos;: &apos;-4074&apos;,
+    &apos;audiChange&apos;: &apos;-12&apos;,
+    &apos;audiAcc&apos;: &apos;119420&apos;,
+    &apos;scrnCnt&apos;: &apos;372&apos;,
+    &apos;showCnt&apos;: &apos;581&apos;},
+   {&apos;rnum&apos;: &apos;8&apos;,
+    &apos;rank&apos;: &apos;8&apos;,
+    &apos;rankInten&apos;: &apos;0&apos;,
+    &apos;rankOldAndNew&apos;: &apos;OLD&apos;,
+    &apos;movieCd&apos;: &apos;20162183&apos;,
+    &apos;movieNm&apos;: &apos;&#xD3EC;&#xCF13;&#xBAAC; &#xB354; &#xBB34;&#xBE44; XY&amp;Z &#x300C;&#xBCFC;&#xCF00;&#xB2C8;&#xC628; : &#xAE30;&#xACC4;&#xC655;&#xAD6D;&#xC758; &#xBE44;&#xBC00;&#x300D;&apos;,
+    &apos;openDt&apos;: &apos;2016-12-22&apos;,
+    &apos;salesAmt&apos;: &apos;154931400&apos;,
+    &apos;salesShare&apos;: &apos;1.6&apos;,
+    &apos;salesInten&apos;: &apos;-31745800&apos;,
+    &apos;salesChange&apos;: &apos;-17&apos;,
+    &apos;salesAcc&apos;: &apos;1821568800&apos;,
+    &apos;audiCnt&apos;: &apos;19405&apos;,
+    &apos;audiInten&apos;: &apos;-4703&apos;,
+    &apos;audiChange&apos;: &apos;-19.5&apos;,
+    &apos;audiAcc&apos;: &apos;238452&apos;,
+    &apos;scrnCnt&apos;: &apos;300&apos;,
+    &apos;showCnt&apos;: &apos;422&apos;},
+   {&apos;rnum&apos;: &apos;9&apos;,
+    &apos;rank&apos;: &apos;9&apos;,
+    &apos;rankInten&apos;: &apos;0&apos;,
+    &apos;rankOldAndNew&apos;: &apos;OLD&apos;,
+    &apos;movieCd&apos;: &apos;20152371&apos;,
+    &apos;movieNm&apos;: &apos;&#xB2F9;&#xC2E0;, &#xAC70;&#xAE30; &#xC788;&#xC5B4;&#xC904;&#xB798;&#xC694;&apos;,
+    &apos;openDt&apos;: &apos;2016-12-14&apos;,
+    &apos;salesAmt&apos;: &apos;166222000&apos;,
+    &apos;salesShare&apos;: &apos;1.7&apos;,
+    &apos;salesInten&apos;: &apos;-30383700&apos;,
+    &apos;salesChange&apos;: &apos;-15.5&apos;,
+    &apos;salesAcc&apos;: &apos;9165307248&apos;,
+    &apos;audiCnt&apos;: &apos;18630&apos;,
+    &apos;audiInten&apos;: &apos;-4126&apos;,
+    &apos;audiChange&apos;: &apos;-18.1&apos;,
+    &apos;audiAcc&apos;: &apos;1143445&apos;,
+    &apos;scrnCnt&apos;: &apos;261&apos;,
+    &apos;showCnt&apos;: &apos;572&apos;},
+   {&apos;rnum&apos;: &apos;10&apos;,
+    &apos;rank&apos;: &apos;10&apos;,
+    &apos;rankInten&apos;: &apos;1&apos;,
+    &apos;rankOldAndNew&apos;: &apos;OLD&apos;,
+    &apos;movieCd&apos;: &apos;20165285&apos;,
+    &apos;movieNm&apos;: &apos;&#xADF9;&#xC7A5;&#xD310; &#xB3C4;&#xB77C;&#xC5D0;&#xBABD;: &#xC2E0; &#xC9C4;&#xAD6C;&#xC758; &#xBC84;&#xC2A4; &#xC624;&#xBE0C; &#xC7AC;&#xD32C;&apos;,
+    &apos;openDt&apos;: &apos;2016-12-21&apos;,
+    &apos;salesAmt&apos;: &apos;28628400&apos;,
+    &apos;salesShare&apos;: &apos;0.3&apos;,
+    &apos;salesInten&apos;: &apos;-7085700&apos;,
+    &apos;salesChange&apos;: &apos;-19.8&apos;,
+    &apos;salesAcc&apos;: &apos;482548500&apos;,
+    &apos;audiCnt&apos;: &apos;3552&apos;,
+    &apos;audiInten&apos;: &apos;-985&apos;,
+    &apos;audiChange&apos;: &apos;-21.7&apos;,
+    &apos;audiAcc&apos;: &apos;62699&apos;,
+    &apos;scrnCnt&apos;: &apos;97&apos;,
+    &apos;showCnt&apos;: &apos;107&apos;}]}}
+</code></pre><pre><code class="lang-python"><span class="hljs-comment">#&#xC77C;&#xBCC4; &#xB370;&#xC774;&#xD130;  : csv&#xB85C; &#xC800;&#xC7A5; &#xD568;&#xC218; &#xC815;&#xC758; </span>
 
 <span class="hljs-comment">#mykey= &apos;430156241533f1d058c603178cc3ca0e&apos; #kobis&#xC5D0;&#xC11C; key &#xBC1C;&#xAE09;</span>
 <span class="hljs-comment">#mykey=&apos;4aa9ba2ba5fd74d34df70439d3b483db&apos;</span>
-mykey=<span class="hljs-string">&apos;aec9e1bc0c849c607bac8a03d6bdb25e&apos;</span> <span class="hljs-comment">#&#xB0B4; &#xD0A4; &#xC77C;&#xC77C; &#xC870;&#xD68C;&#xC218; &#xCD08;&#xACFC;&#xD574;&#xC11C; &#xC608;&#xC2DC;&#xC5D0; &#xC788;&#xB294; &#xD0A4;</span>
+<span class="hljs-comment"># mykey=&apos;aec9e1bc0c849c607bac8a03d6bdb25e&apos; #&#xB0B4; &#xD0A4; &#xC77C;&#xC77C; &#xC870;&#xD68C;&#xC218; &#xCD08;&#xACFC;&#xD574;&#xC11C; &#xC608;&#xC2DC;&#xC5D0; &#xC788;&#xB294; &#xD0A4;</span>
 
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">daliy_boxoffice</span><span class="hljs-params">(start_date, end_date, keys =mykey)</span> :</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">daily_boxoffice</span><span class="hljs-params">(start_date, end_date)</span> :</span>
 
     final_list = []
-    url = <span class="hljs-string">&apos;http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json&apos;</span>
+<span class="hljs-comment">#     url = &apos;http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json&apos;</span>
 
     <span class="hljs-keyword">for</span> single_date <span class="hljs-keyword">in</span> tqdm_notebook(pd.date_range(start_date, end_date)) :
-        <span class="hljs-keyword">for</span> rep <span class="hljs-keyword">in</span> [<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;K&quot;</span>, <span class="hljs-string">&quot;F&quot;</span>] :            
-            dic={
-            <span class="hljs-string">&apos;key&apos;</span> : keys,
-            <span class="hljs-string">&apos;targetDt&apos;</span> : single_date.strftime(<span class="hljs-string">&apos;%Y%m%d&apos;</span>),
-            <span class="hljs-string">&apos;itemPerPage&apos;</span> : <span class="hljs-string">&apos;10&apos;</span>, 
-            <span class="hljs-string">&apos;repNationCd&apos;</span> : rep <span class="hljs-comment">#&#xD55C;&#xAD6D;&#xC601;&#xD654; K, &#xC678;&#xAD6D;&#xC601;&#xD654; F</span>
-            }
+        <span class="hljs-keyword">for</span> rep <span class="hljs-keyword">in</span> [<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;_K&quot;</span>, <span class="hljs-string">&quot;_F&quot;</span>] :            
+<span class="hljs-comment">#             dic={</span>
+<span class="hljs-comment">#             &apos;key&apos; : keys,</span>
+<span class="hljs-comment">#             &apos;targetDt&apos; : single_date.strftime(&apos;%Y%m%d&apos;),</span>
+<span class="hljs-comment">#             &apos;itemPerPage&apos; : &apos;10&apos;, </span>
+<span class="hljs-comment">#             &apos;repNationCd&apos; : rep #&#xD55C;&#xAD6D;&#xC601;&#xD654; K, &#xC678;&#xAD6D;&#xC601;&#xD654; F</span>
+<span class="hljs-comment">#             }</span>
 
-            req = requests.get(url, params = dic)           
-            text = req.text
-            d = json.loads(text) 
+<span class="hljs-comment">#             req = requests.get(url, params = dic)           </span>
+<span class="hljs-comment">#             text = req.text</span>
+<span class="hljs-comment">#             d = json.loads(text) </span>
+
+            targetDt = str(single_date)[<span class="hljs-number">0</span>:<span class="hljs-number">4</span>]+str(single_date)[<span class="hljs-number">5</span>:<span class="hljs-number">7</span>]+str(single_date)[<span class="hljs-number">8</span>:<span class="hljs-number">10</span>]
+            <span class="hljs-keyword">with</span> open(<span class="hljs-string">&apos;data/&apos;</span>+str(targetDt)[<span class="hljs-number">0</span>:<span class="hljs-number">4</span>]+rep+<span class="hljs-string">&apos;/&apos;</span>+str(targetDt)+rep+<span class="hljs-string">&apos;.json&apos;</span>, <span class="hljs-string">&apos;r&apos;</span>, encoding=<span class="hljs-string">&quot;utf-8&quot;</span>) <span class="hljs-keyword">as</span> read_file:
+                d = json.load(read_file)
 
             <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> d[<span class="hljs-string">&quot;boxOfficeResult&quot;</span>][<span class="hljs-string">&quot;dailyBoxOfficeList&quot;</span>] :
                 value_list = []
@@ -377,46 +626,150 @@ mykey=<span class="hljs-string">&apos;aec9e1bc0c849c607bac8a03d6bdb25e&apos;</sp
 
     <span class="hljs-keyword">return</span> pd.DataFrame(final_list, columns=key_list)     <span class="hljs-comment"># final_list&#xC5D0; &#xB2F4;&#xAE34; &#xB0B4;&#xC6A9;&#xC744; df&#xB85C; &#xBC18;&#xD658;</span>
 </code></pre>
-<pre><code class="lang-python"><span class="hljs-comment">#&#xC77C;&#xBCC4; &#xBC15;&#xC2A4; &#xC624;&#xD53C;&#xC2A4;&#xB97C; &#xC6D4;&#xBCC4;&#xB85C; &#xCD94;&#xCD9C;, &#xC601;&#xD654;&#xCF54;&#xB4DC; &#xB9AC;&#xC2A4;&#xD2B8; &#xCD94;&#xCD9C; ###ok</span>
+<pre><code class="lang-python">start_date = date(<span class="hljs-number">2017</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>)
+end_date = date(<span class="hljs-number">2017</span>,<span class="hljs-number">12</span>,<span class="hljs-number">31</span>)
+a = daily_boxoffice(start_date, end_date)
+</code></pre>
+<pre><code>HBox(children=(IntProgress(value=0, max=365), HTML(value=&apos;&apos;)))
+</code></pre><pre><code class="lang-python"><span class="hljs-comment">#&#xC77C;&#xBCC4; &#xBC15;&#xC2A4; &#xC624;&#xD53C;&#xC2A4;&#xB97C; &#xC6D4;&#xBCC4;&#xB85C; &#xCD94;&#xCD9C;, &#xC601;&#xD654;&#xCF54;&#xB4DC; &#xB9AC;&#xC2A4;&#xD2B8; &#xCD94;&#xCD9C; ###ok</span>
 movie_code_list_all=pd.DataFrame()
 <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> tqdm_notebook(range(<span class="hljs-number">1</span>)):
     start_date = my_date + relativedelta(months=i)
     end_date = start_date+ relativedelta(months=<span class="hljs-number">1</span>) - datetime.timedelta(days=<span class="hljs-number">1</span>)
 
-    daliy_boxoffice_data = daliy_boxoffice(start_date, end_date, keys=mykey)
+    daily_boxoffice_data = daily_boxoffice(start_date, end_date)
     startdate=start_date.strftime(<span class="hljs-string">&apos;%Y%m%d&apos;</span>)
 
     enddate=end_date.strftime(<span class="hljs-string">&apos;%Y%m%d&apos;</span>)
 
-    movie_code_list = pd.DataFrame({<span class="hljs-string">&apos;movieCd&apos;</span> :daliy_boxoffice_data.movieCd.drop_duplicates(), <span class="hljs-string">&apos;movieNm&apos;</span>:daliy_boxoffice_data.movieNm.drop_duplicates(), <span class="hljs-string">&apos;director&apos;</span>:<span class="hljs-string">&apos;&apos;</span>,<span class="hljs-string">&apos;Rate&apos;</span> : <span class="hljs-number">0</span>})
+    movie_code_list = pd.DataFrame({<span class="hljs-string">&apos;movieCd&apos;</span> :daily_boxoffice_data.movieCd.drop_duplicates(), <span class="hljs-string">&apos;movieNm&apos;</span>:daily_boxoffice_data.movieNm.drop_duplicates(), <span class="hljs-string">&apos;director&apos;</span>:<span class="hljs-string">&apos;&apos;</span>,<span class="hljs-string">&apos;Rate&apos;</span> : <span class="hljs-number">0</span>})
 
 
-    daliy_boxoffice_data.to_csv(<span class="hljs-string">&quot;daliy_boxoffice_data_&quot;</span>+startdate+<span class="hljs-string">&quot;~&quot;</span>+enddate+<span class="hljs-string">&quot;.csv&quot;</span>, index=<span class="hljs-keyword">False</span>)
+    daily_boxoffice_data.to_csv(<span class="hljs-string">&quot;daliy_boxoffice_data_&quot;</span>+startdate+<span class="hljs-string">&quot;~&quot;</span>+enddate+<span class="hljs-string">&quot;.csv&quot;</span>, index=<span class="hljs-keyword">False</span>)
     movie_code_list.to_csv(<span class="hljs-string">&quot;movie_code_list_&quot;</span>+startdate+<span class="hljs-string">&quot;~&quot;</span>+enddate+<span class="hljs-string">&quot;.csv&quot;</span>, index=<span class="hljs-keyword">False</span>)
 
     movie_code_list_all = movie_code_list.append(movie_code_list_all)
     movie_code_list_all = movie_code_list_all.drop_duplicates()
     movie_code_list_all.to_csv(<span class="hljs-string">&quot;movie_code_list_all.csv&quot;</span>, index=<span class="hljs-keyword">False</span>)
 </code></pre>
-<pre><code>A Jupyter Widget
+<pre><code>HBox(children=(IntProgress(value=0, max=1), HTML(value=&apos;&apos;)))
 
 
 
-A Jupyter Widget
+HBox(children=(IntProgress(value=0, max=31), HTML(value=&apos;&apos;)))
+</code></pre><hr>
+<h2 id="&#xC601;&#xD654;-&#xCF54;&#xB4DC;&#xB97C;-&#xD1B5;&#xD574;-&#xC601;&#xD654;-&#xC815;&#xBCF4;-&#xD30C;&#xC77C;-&#xBD88;&#xB7EC;&#xC624;&#xAE30;">&#xC601;&#xD654; &#xCF54;&#xB4DC;&#xB97C; &#xD1B5;&#xD574; &#xC601;&#xD654; &#xC815;&#xBCF4; &#xD30C;&#xC77C; &#xBD88;&#xB7EC;&#xC624;&#xAE30;</h2>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">movie_info_api</span><span class="hljs-params">(df)</span>:</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>,len(df[<span class="hljs-string">&apos;movieCd&apos;</span>])):
+        movieCd = str(df[<span class="hljs-string">&apos;movieCd&apos;</span>][i])
+
+        <span class="hljs-keyword">if</span>(os.path.isfile(<span class="hljs-string">&quot;/root/movie/movie_info/&quot;</span>+movieCd+<span class="hljs-string">&quot;.json&quot;</span>)):
+            print(movieCd+<span class="hljs-string">&quot;.json already exist!&quot;</span>)
+
+        <span class="hljs-keyword">else</span>:
+            url = <span class="hljs-string">&apos;http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=&apos;</span>\
+                +key+<span class="hljs-string">&apos;&amp;movieCd=&apos;</span>+movieCd    
+            res = requests.get(url)
+            text = res.text
+            d = json.loads(text)
+            print(movieCd+<span class="hljs-string">&quot;.json is created!&quot;</span>)
+            <span class="hljs-keyword">with</span> open(<span class="hljs-string">&apos;movie_info/&apos;</span>+movieCd+<span class="hljs-string">&apos;.json&apos;</span>, <span class="hljs-string">&apos;w&apos;</span>, encoding=<span class="hljs-string">&quot;utf-8&quot;</span>) <span class="hljs-keyword">as</span> make_file:
+                json.dump(d, make_file, ensure_ascii=<span class="hljs-keyword">False</span>, indent=<span class="hljs-string">&quot;\t&quot;</span>)
+</code></pre>
+<pre><code class="lang-python">df = pd.read_csv(<span class="hljs-string">&apos;movie_code_list_all.csv&apos;</span>)
+movie_info_api(df)
+</code></pre>
+<pre><code>20161725.json already exist!
+20163183.json already exist!
+20162025.json already exist!
+20144641.json already exist!
+20167904.json already exist!
+20161872.json already exist!
+20162727.json already exist!
+20162183.json already exist!
+20152371.json already exist!
+20165285.json already exist!
+20154661.json already exist!
+20161701.json already exist!
+20161603.json already exist!
+20162545.json already exist!
+20159286.json already exist!
+20164527.json already exist!
+20153401.json already exist!
+20161763.json already exist!
+20165543.json already exist!
+19890291.json already exist!
+20150966.json already exist!
+20165925.json already exist!
+20080893.json already exist!
+20160221.json already exist!
+20163014.json already exist!
+20151181.json already exist!
+20154342.json already exist!
+20155223.json already exist!
+20167286.json already exist!
+20161084.json already exist!
+20165153.json already exist!
+20145486.json already exist!
+20165061.json already exist!
+20164485.json already exist!
+20151228.json already exist!
+20165144.json already exist!
+20101406.json already exist!
+20151229.json already exist!
+19880070.json already exist!
+19688044.json already exist!
+20110014.json already exist!
+20157631.json already exist!
+20160261.json already exist!
+20164421.json already exist!
+20168381.json already exist!
+20168324.json already exist!
+20163845.json already exist!
+20168246.json already exist!
+20167127.json already exist!
+20165443.json already exist!
+20160881.json already exist!
+20149384.json already exist!
+20155700.json already exist!
+19600018.json already exist!
+20168664.json already exist!
+20163186.json already exist!
+20010130.json already exist!
+20167324.json already exist!
+20168104.json already exist!
+20168086.json already exist!
+20168088.json already exist!
+20168087.json already exist!
+20166421.json already exist!
+20167644.json already exist!
+20168154.json already exist!
+20179481.json already exist!
+20158482.json already exist!
+20168688.json already exist!
+20167285.json already exist!
+20158799.json already exist!
+19598036.json already exist!
+20168689.json already exist!
+20165822.json already exist!
+20168611.json already exist!
+20168366.json already exist!
+19820052.json already exist!
+20166707.json already exist!
+19730023.json already exist!
+20150964.json already exist!
 </code></pre><pre><code class="lang-python"><span class="hljs-comment">#&#xC601;&#xD654;&#xB370;&#xC774;&#xD130;  : txt &#xB85C; &#xC800;&#xC7A5; &#xD568;&#xC218; &#xC815;&#xC758;</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">movie_data</span><span class="hljs-params">(lists, keys = mykey)</span> :</span>    
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">movie_data</span><span class="hljs-params">(lists)</span> :</span>    
     dict_list = dict()
-    url = <span class="hljs-string">&apos;http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json&apos;</span>
 
     <span class="hljs-keyword">for</span> movie <span class="hljs-keyword">in</span> lists :
-        <span class="hljs-comment">#print(movie)</span>
-        dic={ <span class="hljs-string">&apos;key&apos;</span> : keys, <span class="hljs-string">&apos;movieCd&apos;</span> : movie}        
-        req = requests.get(url, params = dic)
+        <span class="hljs-keyword">with</span> open(<span class="hljs-string">&apos;movie_info/&apos;</span>+movie+<span class="hljs-string">&apos;.json&apos;</span>, <span class="hljs-string">&apos;r&apos;</span>, encoding=<span class="hljs-string">&quot;utf-8&quot;</span>) <span class="hljs-keyword">as</span> read_file:
+            d = json.load(read_file)
 
-        dict_list[movie] = req.json()[<span class="hljs-string">&apos;movieInfoResult&apos;</span>][<span class="hljs-string">&apos;movieInfo&apos;</span>] <span class="hljs-comment">#dict_list[movie] &#xAC00; &#xC788;&#xC5B4;&#xC57C; append&#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xB428;. &#xC5C6;&#xC73C;&#xBA74; &#xB9C8;&#xC9C0;&#xB9C9;&#xAC83;&#xB9CC; &#xCD94;&#xCD9C;</span>
+        dict_list[movie] = d[<span class="hljs-string">&apos;movieInfoResult&apos;</span>][<span class="hljs-string">&apos;movieInfo&apos;</span>] <span class="hljs-comment">#dict_list[movie] &#xAC00; &#xC788;&#xC5B4;&#xC57C; append&#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xB428;. &#xC5C6;&#xC73C;&#xBA74; &#xB9C8;&#xC9C0;&#xB9C9;&#xAC83;&#xB9CC; &#xCD94;&#xCD9C;</span>
     <span class="hljs-keyword">return</span> dict_list
 </code></pre>
-<pre><code class="lang-python">movie_info=movie_data(movie_code_list_all.movieCd,keys=mykey) 
+<pre><code class="lang-python">movie_info=movie_data(movie_code_list_all.movieCd) 
 <span class="hljs-keyword">with</span> open(<span class="hljs-string">&apos;movie_info.txt&apos;</span>, <span class="hljs-string">&apos;w&apos;</span>, encoding=<span class="hljs-string">&apos;utf-8&apos;</span>) <span class="hljs-keyword">as</span> outfile:   <span class="hljs-comment">#&#xB515;&#xC154;&#xB108;&#xB9AC;&#xB97C; json&#xC73C;&#xB85C; &#xC800;&#xC7A5;</span>
     json.dump(movie_info, outfile, ensure_ascii=<span class="hljs-keyword">False</span>)
 </code></pre>
@@ -503,245 +856,246 @@ movie_info_keys
  &apos;20166707&apos;,
  &apos;19730023&apos;,
  &apos;20150964&apos;]
-</code></pre><pre><code class="lang-python"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(movie_code_list_all)):
-    movie_code_list_all.iloc[i,<span class="hljs-number">1</span>]=movie_info[movie_info_keys[i]][<span class="hljs-string">&apos;directors&apos;</span>][<span class="hljs-number">0</span>][<span class="hljs-string">&apos;peopleNm&apos;</span>]
+</code></pre><pre><code class="lang-python">movie_code_list_all = pd.read_csv(<span class="hljs-string">&quot;movie_code_list_all.csv&quot;</span>)
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(movie_code_list_all)):
+    movie_code_list_all.iloc[i,<span class="hljs-number">2</span>]=movie_info[movie_info_keys[i]][<span class="hljs-string">&apos;directors&apos;</span>][<span class="hljs-number">0</span>][<span class="hljs-string">&apos;peopleNm&apos;</span>]
 </code></pre>
 <pre><code class="lang-python">movie_code_list_all
 </code></pre>
 <div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Rate</th>
-      <th>director</th>
       <th>movieCd</th>
       <th>movieNm</th>
+      <th>director</th>
+      <th>Rate</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>0</td>
-      <td>&#xC870;&#xC758;&#xC11D;</td>
       <td>20161725</td>
       <td>&#xB9C8;&#xC2A4;&#xD130;</td>
+      <td>&#xC870;&#xC758;&#xC11D;</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0</td>
-      <td>&#xAC00;&#xB81B; &#xC5D0;&#xB4DC;&#xC6CC;&#xC988;</td>
       <td>20163183</td>
       <td>&#xB85C;&#xADF8; &#xC6D0;: &#xC2A4;&#xD0C0;&#xC6CC;&#xC988; &#xC2A4;&#xD1A0;&#xB9AC;</td>
+      <td>&#xAC00;&#xB81B; &#xC5D0;&#xB4DC;&#xC6CC;&#xC988;</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0</td>
-      <td>&#xAC00;&#xC2A4; &#xC81C;&#xB2DD;&#xC2A4;</td>
       <td>20162025</td>
       <td>&#xC53D;</td>
+      <td>&#xAC00;&#xC2A4; &#xC81C;&#xB2DD;&#xC2A4;</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0</td>
-      <td>&#xBC15;&#xC815;&#xC6B0;</td>
       <td>20144641</td>
       <td>&#xD310;&#xB3C4;&#xB77C;</td>
+      <td>&#xBC15;&#xC815;&#xC6B0;</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0</td>
-      <td>&#xB370;&#xC774;&#xBBF8;&#xC5B8; &#xC154;&#xC824;</td>
       <td>20167904</td>
       <td>&#xB77C;&#xB77C;&#xB79C;&#xB4DC;</td>
+      <td>&#xB370;&#xC774;&#xBBF8;&#xC5B8; &#xC154;&#xC824;</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>0</td>
-      <td>&#xC2E0;&#xCE74;&#xC774; &#xB9C8;&#xCF54;&#xD1A0;</td>
       <td>20161872</td>
       <td>&#xB108;&#xC758; &#xC774;&#xB984;&#xC740;.</td>
+      <td>&#xC2E0;&#xCE74;&#xC774; &#xB9C8;&#xCF54;&#xD1A0;</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0</td>
-      <td>&#xC720;&#xC57C;&#xB9C8; &#xCFE0;&#xB2C8;&#xD788;&#xCF54;</td>
       <td>20162727</td>
       <td>&#xB8E8;&#xB3CC;&#xD504;&#xC640; &#xB9CE;&#xC774;&#xC788;&#xC5B4;</td>
+      <td>&#xC720;&#xC57C;&#xB9C8; &#xCFE0;&#xB2C8;&#xD788;&#xCF54;</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>0</td>
-      <td>&#xC720;&#xC57C;&#xB9C8; &#xCFE0;&#xB2C8;&#xD788;&#xCF54;</td>
       <td>20162183</td>
       <td>&#xD3EC;&#xCF13;&#xBAAC; &#xB354; &#xBB34;&#xBE44; XY&amp;Z &#x300C;&#xBCFC;&#xCF00;&#xB2C8;&#xC628; : &#xAE30;&#xACC4;&#xC655;&#xAD6D;&#xC758; &#xBE44;&#xBC00;&#x300D;</td>
+      <td>&#xC720;&#xC57C;&#xB9C8; &#xCFE0;&#xB2C8;&#xD788;&#xCF54;</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0</td>
-      <td>&#xD64D;&#xC9C0;&#xC601;</td>
       <td>20152371</td>
       <td>&#xB2F9;&#xC2E0;, &#xAC70;&#xAE30; &#xC788;&#xC5B4;&#xC904;&#xB798;&#xC694;</td>
+      <td>&#xD64D;&#xC9C0;&#xC601;</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>0</td>
-      <td>&#xC57C;&#xCFE0;&#xC640; &#xC2E0;&#xB178;&#xC2A4;&#xCF00;</td>
       <td>20165285</td>
       <td>&#xADF9;&#xC7A5;&#xD310; &#xB3C4;&#xB77C;&#xC5D0;&#xBABD;: &#xC2E0; &#xC9C4;&#xAD6C;&#xC758; &#xBC84;&#xC2A4; &#xC624;&#xBE0C; &#xC7AC;&#xD32C;</td>
+      <td>&#xC57C;&#xCFE0;&#xC640; &#xC2E0;&#xB178;&#xC2A4;&#xCF00;</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>20154661</td>
+      <td>&#xD615;</td>
+      <td>&#xAD8C;&#xC218;&#xACBD;</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>20161701</td>
+      <td>&#xC704;&#xCF04;&#xC988;</td>
+      <td>&#xC774;&#xB3D9;&#xD558;</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>20161603</td>
+      <td>&#xC21C;&#xC885;</td>
+      <td>&#xAE40;&#xB3D9;&#xBBFC;</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>13</th>
+      <td>20162545</td>
+      <td>&#xBB34;&#xD604;, &#xB450; &#xB3C4;&#xC2DC; &#xC774;&#xC57C;&#xAE30;</td>
+      <td>&#xC804;&#xC778;&#xD658;</td>
       <td>0</td>
-      <td>&#xAD8C;&#xC218;&#xACBD;</td>
-      <td>20154661</td>
-      <td>&#xD615;</td>
     </tr>
     <tr>
       <th>14</th>
+      <td>20159286</td>
+      <td>&#xC5F0;&#xC560;&#xB2F4;</td>
+      <td>&#xC774;&#xD604;&#xC8FC;</td>
       <td>0</td>
-      <td>&#xC774;&#xB3D9;&#xD558;</td>
-      <td>20161701</td>
-      <td>&#xC704;&#xCF04;&#xC988;</td>
     </tr>
     <tr>
       <th>15</th>
+      <td>20164527</td>
+      <td>&#xBD80;&#xB989;! &#xBD80;&#xB989;! &#xBE0C;&#xB8E8;&#xBBF8;&#xC988;: &#xC2A4;&#xD53C;&#xB354;&#xC758; &#xBAA8;&#xD5D8; &#xC77C;&#xAE30;</td>
+      <td>&#xC774;&#xC601;&#xC900;</td>
       <td>0</td>
-      <td>&#xAE40;&#xB3D9;&#xBBFC;</td>
-      <td>20161603</td>
-      <td>&#xC21C;&#xC885;</td>
     </tr>
     <tr>
       <th>16</th>
+      <td>20153401</td>
+      <td>&#xD30C;&#xD30C;&#xC880;&#xBE44;</td>
+      <td>&#xACE0;&#xD604;&#xCC3D;</td>
       <td>0</td>
-      <td>&#xC804;&#xC778;&#xD658;</td>
-      <td>20162545</td>
-      <td>&#xBB34;&#xD604;, &#xB450; &#xB3C4;&#xC2DC; &#xC774;&#xC57C;&#xAE30;</td>
     </tr>
     <tr>
       <th>17</th>
+      <td>20161763</td>
+      <td>&#xB098;, &#xB2E4;&#xB2C8;&#xC5D8; &#xBE14;&#xB808;&#xC774;&#xD06C;</td>
+      <td>&#xCF04; &#xB85C;&#xCE58;</td>
       <td>0</td>
-      <td>&#xC774;&#xD604;&#xC8FC;</td>
-      <td>20159286</td>
-      <td>&#xC5F0;&#xC560;&#xB2F4;</td>
     </tr>
     <tr>
       <th>18</th>
+      <td>20165543</td>
+      <td>&#xD558;&#xC774;&#xD050;!! &#xC2B9;&#xC790;&#xC640; &#xD328;&#xC790;</td>
+      <td>&#xBBF8;&#xCE20;&#xB098;&#xCE74; &#xC2A4;&#xC2A4;&#xBB34;</td>
       <td>0</td>
-      <td>&#xC774;&#xC601;&#xC900;</td>
-      <td>20164527</td>
-      <td>&#xBD80;&#xB989;! &#xBD80;&#xB989;! &#xBE0C;&#xB8E8;&#xBBF8;&#xC988;: &#xC2A4;&#xD53C;&#xB354;&#xC758; &#xBAA8;&#xD5D8; &#xC77C;&#xAE30;</td>
     </tr>
     <tr>
       <th>19</th>
+      <td>19890291</td>
+      <td>&#xD574;&#xB9AC;&#xAC00; &#xC0D0;&#xB9AC;&#xB97C; &#xB9CC;&#xB0AC;&#xC744; &#xB54C;</td>
+      <td>&#xB86D; &#xB77C;&#xC774;&#xB108;</td>
       <td>0</td>
-      <td>&#xACE0;&#xD604;&#xCC3D;</td>
-      <td>20153401</td>
-      <td>&#xD30C;&#xD30C;&#xC880;&#xBE44;</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>20150966</td>
+      <td>&#xC0AC;&#xB791;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;</td>
+      <td>&#xC8FC;&#xC9C0;&#xD64D;</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>20165925</td>
+      <td>&#xC74C;&#xB780; &#xACFC;&#xC678; - &#xBB34;&#xC0AD;&#xC81C;&#xD310;</td>
+      <td>&#xCD5C;&#xC6B0;&#xC131;</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>20080893</td>
+      <td>&#xB80C;&#xC758; &#xC560;&#xAC00;</td>
+      <td>&#xAE40;&#xAE30;&#xC601;</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>20160221</td>
+      <td>&#xC5D0;&#xACE4; &#xC274;&#xB808;: &#xC695;&#xB9DD;&#xC774; &#xADF8;&#xB9B0; &#xADF8;&#xB9BC;</td>
+      <td>&#xB514;&#xC5D0;&#xD130; &#xBC84;&#xB108;</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>20163014</td>
+      <td>7&#xB144;-&#xADF8;&#xB4E4;&#xC774; &#xC5C6;&#xB294; &#xC5B8;&#xB860;</td>
+      <td>&#xAE40;&#xC9C4;&#xD601;</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>20151181</td>
+      <td>&#xC5EC;&#xAD50;&#xC0AC;</td>
+      <td>&#xAE40;&#xD0DC;&#xC6A9;</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>20154342</td>
+      <td>&#xB69C;&#xB974;: &#xB0B4; &#xC0DD;&#xC560; &#xCD5C;&#xACE0;&#xC758; 49&#xC77C;</td>
+      <td>&#xC804;&#xC77C;&#xC6B0;</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>27</th>
+      <td>20155223</td>
+      <td>&#xBAA9;&#xC228; &#xAC74; &#xC5F0;&#xC560;</td>
+      <td>&#xC1A1;&#xBBFC;&#xADDC;</td>
       <td>0</td>
-      <td>&#xCF04; &#xB85C;&#xCE58;</td>
-      <td>20161763</td>
-      <td>&#xB098;, &#xB2E4;&#xB2C8;&#xC5D8; &#xBE14;&#xB808;&#xC774;&#xD06C;</td>
     </tr>
     <tr>
       <th>28</th>
+      <td>20167286</td>
+      <td>&#xD615;&#xC758; &#xC5EC;&#xC790;</td>
+      <td>&#xBAA8;&#xB9AC;&#xC624;&#xCE74; &#xD1A0;&#xC2DC;&#xC720;&#xD0A4;</td>
       <td>0</td>
-      <td>&#xBBF8;&#xCE20;&#xB098;&#xCE74; &#xC2A4;&#xC2A4;&#xBB34;</td>
-      <td>20165543</td>
-      <td>&#xD558;&#xC774;&#xD050;!! &#xC2B9;&#xC790;&#xC640; &#xD328;&#xC790;</td>
     </tr>
     <tr>
       <th>29</th>
-      <td>0</td>
-      <td>&#xB86D; &#xB77C;&#xC774;&#xB108;</td>
-      <td>19890291</td>
-      <td>&#xD574;&#xB9AC;&#xAC00; &#xC0D0;&#xB9AC;&#xB97C; &#xB9CC;&#xB0AC;&#xC744; &#xB54C;</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>0</td>
-      <td>&#xC8FC;&#xC9C0;&#xD64D;</td>
-      <td>20150966</td>
-      <td>&#xC0AC;&#xB791;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;</td>
-    </tr>
-    <tr>
-      <th>45</th>
-      <td>0</td>
-      <td>&#xCD5C;&#xC6B0;&#xC131;</td>
-      <td>20165925</td>
-      <td>&#xC74C;&#xB780; &#xACFC;&#xC678; - &#xBB34;&#xC0AD;&#xC81C;&#xD310;</td>
-    </tr>
-    <tr>
-      <th>46</th>
-      <td>0</td>
-      <td>&#xAE40;&#xAE30;&#xC601;</td>
-      <td>20080893</td>
-      <td>&#xB80C;&#xC758; &#xC560;&#xAC00;</td>
-    </tr>
-    <tr>
-      <th>57</th>
-      <td>0</td>
-      <td>&#xB514;&#xC5D0;&#xD130; &#xBC84;&#xB108;</td>
-      <td>20160221</td>
-      <td>&#xC5D0;&#xACE4; &#xC274;&#xB808;: &#xC695;&#xB9DD;&#xC774; &#xADF8;&#xB9B0; &#xADF8;&#xB9BC;</td>
-    </tr>
-    <tr>
-      <th>69</th>
-      <td>0</td>
-      <td>&#xAE40;&#xC9C4;&#xD601;</td>
-      <td>20163014</td>
-      <td>7&#xB144;-&#xADF8;&#xB4E4;&#xC774; &#xC5C6;&#xB294; &#xC5B8;&#xB860;</td>
-    </tr>
-    <tr>
-      <th>75</th>
-      <td>0</td>
-      <td>&#xAE40;&#xD0DC;&#xC6A9;</td>
-      <td>20151181</td>
-      <td>&#xC5EC;&#xAD50;&#xC0AC;</td>
-    </tr>
-    <tr>
-      <th>76</th>
-      <td>0</td>
-      <td>&#xC804;&#xC77C;&#xC6B0;</td>
-      <td>20154342</td>
-      <td>&#xB69C;&#xB974;: &#xB0B4; &#xC0DD;&#xC560; &#xCD5C;&#xACE0;&#xC758; 49&#xC77C;</td>
-    </tr>
-    <tr>
-      <th>77</th>
-      <td>0</td>
-      <td>&#xC1A1;&#xBBFC;&#xADDC;</td>
-      <td>20155223</td>
-      <td>&#xBAA9;&#xC228; &#xAC74; &#xC5F0;&#xC560;</td>
-    </tr>
-    <tr>
-      <th>79</th>
-      <td>0</td>
-      <td>&#xBAA8;&#xB9AC;&#xC624;&#xCE74; &#xD1A0;&#xC2DC;&#xC720;&#xD0A4;</td>
-      <td>20167286</td>
-      <td>&#xD615;&#xC758; &#xC5EC;&#xC790;</td>
-    </tr>
-    <tr>
-      <th>92</th>
-      <td>0</td>
-      <td>&#xBAA8;&#xD2BC; &#xD2F8;&#xB364;</td>
       <td>20161084</td>
       <td>&#xD328;&#xC2E0;&#xC800;&#xC2A4;</td>
+      <td>&#xBAA8;&#xD2BC; &#xD2F8;&#xB364;</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>...</th>
@@ -751,214 +1105,214 @@ movie_info_keys
       <td>...</td>
     </tr>
     <tr>
-      <th>329</th>
-      <td>0</td>
-      <td>&#xB860; &#xD074;&#xB808;&#xBA58;&#xCE20;</td>
+      <th>49</th>
       <td>20165443</td>
       <td>&#xBAA8;&#xC544;&#xB098;</td>
+      <td>&#xB860; &#xD074;&#xB808;&#xBA58;&#xCE20;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>346</th>
-      <td>0</td>
-      <td>&#xAE40;&#xC18C;&#xC5F0;</td>
+      <th>50</th>
       <td>20160881</td>
       <td>&#xBB38;&#xC601;</td>
+      <td>&#xAE40;&#xC18C;&#xC5F0;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>437</th>
-      <td>0</td>
-      <td>&#xC784;&#xC6D0;&#xC2DD;</td>
+      <th>51</th>
       <td>20149384</td>
       <td>&#xCCAD;&#xC77C;&#xC804;&#xC7C1;&#xACFC; &#xC5EC;&#xAC78; &#xBBFC;&#xBE44;</td>
+      <td>&#xC784;&#xC6D0;&#xC2DD;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>469</th>
-      <td>0</td>
-      <td>&#xD55C;&#xD615;&#xBAA8;</td>
+      <th>52</th>
       <td>20155700</td>
       <td>&#xC655;&#xC790; &#xD638;&#xB3D9;</td>
+      <td>&#xD55C;&#xD615;&#xBAA8;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>497</th>
-      <td>0</td>
-      <td>&#xAE40;&#xAE30;&#xC601;</td>
+      <th>53</th>
       <td>19600018</td>
       <td>&#xD558;&#xB140;</td>
+      <td>&#xAE40;&#xAE30;&#xC601;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>518</th>
-      <td>0</td>
-      <td>&#xD53C;&#xD130; &#xC7AD;&#xC2A8;</td>
+      <th>54</th>
       <td>20168664</td>
       <td>&#xBC18;&#xC9C0;&#xC758; &#xC81C;&#xC655; : &#xB450;&#xAC1C;&#xC758; &#xD0D1; (&#xD655;&#xC7A5;&#xD310;)</td>
+      <td>&#xD53C;&#xD130; &#xC7AD;&#xC2A8;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>536</th>
-      <td>0</td>
-      <td>&#xC790;&#xBE44;&#xC5D0; &#xB3CC;&#xB780;</td>
+      <th>55</th>
       <td>20163186</td>
       <td>&#xB2E8;&#xC9C0; &#xC138;&#xC0C1;&#xC758; &#xB05D;</td>
+      <td>&#xC790;&#xBE44;&#xC5D0; &#xB3CC;&#xB780;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>539</th>
-      <td>0</td>
-      <td>&#xC2A4;&#xD2F0;&#xBE10; &#xB2EC;&#xB4DC;&#xB9AC;</td>
+      <th>56</th>
       <td>20010130</td>
       <td>&#xBE4C;&#xB9AC; &#xC5D8;&#xB9AC;&#xC5B4;&#xD2B8;</td>
+      <td>&#xC2A4;&#xD2F0;&#xBE10; &#xB2EC;&#xB4DC;&#xB9AC;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>569</th>
-      <td>0</td>
-      <td>&#xAC00;&#xC2A4; &#xB370;&#xC774;&#xBE44;&#xC2A4;</td>
+      <th>57</th>
       <td>20167324</td>
       <td>&#xB77C;&#xC774;&#xC5B8;</td>
+      <td>&#xAC00;&#xC2A4; &#xB370;&#xC774;&#xBE44;&#xC2A4;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>618</th>
-      <td>0</td>
-      <td>&#xBC30;&#xACBD;&#xD5CC;</td>
+      <th>58</th>
       <td>20168104</td>
       <td>2017 &#xD55C;&#xAD6D;&#xC601;&#xD654;&#xC544;&#xCE74;&#xB370;&#xBBF8; 33&#xAE30; &#xC878;&#xC5C5;&#xC601;&#xD654;&#xC81C; - B</td>
+      <td>&#xBC30;&#xACBD;&#xD5CC;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>619</th>
-      <td>0</td>
-      <td>&#xACFD;&#xC2B9;&#xBBFC;</td>
+      <th>59</th>
       <td>20168086</td>
       <td>2017 &#xD55C;&#xAD6D;&#xC601;&#xD654;&#xC544;&#xCE74;&#xB370;&#xBBF8; 33&#xAE30; &#xC878;&#xC5C5;&#xC601;&#xD654;&#xC81C; - A</td>
+      <td>&#xACFD;&#xC2B9;&#xBBFC;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>646</th>
-      <td>0</td>
-      <td>&#xC804;&#xD76C;&#xC6B1;</td>
+      <th>60</th>
       <td>20168088</td>
       <td>2017 &#xD55C;&#xAD6D;&#xC601;&#xD654;&#xC544;&#xCE74;&#xB370;&#xBBF8; 33&#xAE30; &#xC878;&#xC5C5;&#xC601;&#xD654;&#xC81C; - D</td>
+      <td>&#xC804;&#xD76C;&#xC6B1;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>647</th>
-      <td>0</td>
-      <td>&#xD55C;&#xAC00;&#xB78C;</td>
+      <th>61</th>
       <td>20168087</td>
       <td>2017 &#xD55C;&#xAD6D;&#xC601;&#xD654;&#xC544;&#xCE74;&#xB370;&#xBBF8; 33&#xAE30; &#xC878;&#xC5C5;&#xC601;&#xD654;&#xC81C; - C</td>
+      <td>&#xD55C;&#xAC00;&#xB78C;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>675</th>
-      <td>0</td>
-      <td>&#xAE40;&#xD0DC;&#xC724;</td>
+      <th>62</th>
       <td>20166421</td>
       <td>&#xC7AC;&#xC2EC;</td>
+      <td>&#xAE40;&#xD0DC;&#xC724;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>688</th>
-      <td>0</td>
-      <td>&#xC5D0;&#xB9AD; &#xC12C;&#xBA38;</td>
+      <th>63</th>
       <td>20167644</td>
       <td>&#xBC1C;&#xB808;&#xB9AC;&#xB098;</td>
+      <td>&#xC5D0;&#xB9AD; &#xC12C;&#xBA38;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>689</th>
-      <td>0</td>
-      <td>&#xD53C;&#xD130; &#xBC84;&#xADF8;</td>
+      <th>64</th>
       <td>20168154</td>
       <td>&#xB525;&#xC6CC;&#xD130; &#xD638;&#xB77C;&#xC774;&#xC98C;</td>
+      <td>&#xD53C;&#xD130; &#xBC84;&#xADF8;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>706</th>
-      <td>0</td>
-      <td>&#xB178;&#xC9C4;&#xC218;</td>
+      <th>65</th>
       <td>20179481</td>
       <td>&#xC0AC;&#xB791;&#xBC1B;&#xC9C0; &#xBABB;&#xD55C; &#xC5EC;&#xC790;</td>
+      <td>&#xB178;&#xC9C4;&#xC218;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>708</th>
-      <td>0</td>
-      <td>&#xC774;&#xC900;&#xC775;</td>
+      <th>66</th>
       <td>20158482</td>
       <td>&#xB3D9;&#xC8FC;</td>
+      <td>&#xC774;&#xC900;&#xC775;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>722</th>
-      <td>0</td>
-      <td>&#xD3F4; W.S. &#xC564;&#xB354;&#xC2A8;</td>
+      <th>67</th>
       <td>20168688</td>
       <td>&#xB808;&#xC9C0;&#xB358;&#xD2B8; &#xC774;&#xBE14;: &#xD30C;&#xBA78;&#xC758; &#xB0A0;</td>
+      <td>&#xD3F4; W.S. &#xC564;&#xB354;&#xC2A8;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>727</th>
-      <td>0</td>
-      <td>&#xD0C0;&#xCE74;&#xD558;&#xC2DC; &#xC640;&#xD0C0;&#xB8E8;</td>
+      <th>68</th>
       <td>20167285</td>
       <td>&#xC9F1;&#xAD6C;&#xB294; &#xBABB;&#xB9D0;&#xB824; &#xADF9;&#xC7A5;&#xD310;: &#xD3ED;&#xD48D;&#xC218;&#xBA74;! &#xAFC8;&#xAFB8;&#xB294; &#xC138;&#xACC4; &#xB300;&#xB3CC;&#xACA9;</td>
+      <td>&#xD0C0;&#xCE74;&#xD558;&#xC2DC; &#xC640;&#xD0C0;&#xB8E8;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>737</th>
-      <td>0</td>
-      <td>&#xC774;&#xB098;&#xC815;</td>
+      <th>69</th>
       <td>20158799</td>
       <td>&#xB208;&#xAE38;</td>
+      <td>&#xC774;&#xB098;&#xC815;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>739</th>
-      <td>0</td>
-      <td>&#xD55C;&#xD615;&#xBAA8;</td>
+      <th>70</th>
       <td>19598036</td>
       <td>&#xC5EC;&#xC0AC;&#xC7A5;</td>
+      <td>&#xD55C;&#xD615;&#xBAA8;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>747</th>
-      <td>0</td>
-      <td>&#xD53C;&#xD130; &#xC7AD;&#xC2A8;</td>
+      <th>71</th>
       <td>20168689</td>
       <td>&#xBC18;&#xC9C0;&#xC758; &#xC81C;&#xC655; : &#xC655;&#xC758; &#xADC0;&#xD658; (&#xD655;&#xC7A5;&#xD310;)</td>
+      <td>&#xD53C;&#xD130; &#xC7AD;&#xC2A8;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>748</th>
-      <td>0</td>
-      <td>&#xB808;&#xBCA0;&#xCE74; &#xBC00;&#xB7EC;</td>
+      <th>72</th>
       <td>20165822</td>
       <td>&#xB9E4;&#xAE30;&#xC2A4; &#xD50C;&#xB79C;</td>
+      <td>&#xB808;&#xBCA0;&#xCE74; &#xBC00;&#xB7EC;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>749</th>
-      <td>0</td>
-      <td>&#xB370;&#xB2C8;&#xC2A4; &#xCCB4;&#xB974;&#xB178;&#xD504;</td>
+      <th>73</th>
       <td>20168611</td>
       <td>&#xD0A4;&#xCF54;&#xB9AC;&#xD0A4;: &#xD669;&#xAE08;&#xBAA8;&#xC790;&#xC758; &#xBE44;&#xBC00;</td>
+      <td>&#xB370;&#xB2C8;&#xC2A4; &#xCCB4;&#xB974;&#xB178;&#xD504;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>779</th>
-      <td>0</td>
-      <td>&#xB2E4;&#xB77C; &#xC624;&#xCF54;&#xB12C;</td>
+      <th>74</th>
       <td>20168366</td>
       <td>&#xBC14;&#xB2E4; &#xD0D0;&#xD5D8;&#xB300; &#xC625;&#xD1A0;&#xB11B; &#xC2DC;&#xC98C;4: &#xBC14;&#xB2E4; &#xAD34;&#xBB3C; &#xB300;&#xC18C;&#xB3D9;</td>
+      <td>&#xB2E4;&#xB77C; &#xC624;&#xCF54;&#xB12C;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>826</th>
-      <td>0</td>
-      <td>&#xBC15;&#xD638;&#xD0DC;</td>
+      <th>75</th>
       <td>19820052</td>
       <td>&#xC560;&#xC778;</td>
+      <td>&#xBC15;&#xD638;&#xD0DC;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>839</th>
-      <td>0</td>
-      <td>&#xD30C;&#xBE14;&#xB85C; &#xB77C;&#xB77C;&#xC778;</td>
+      <th>76</th>
       <td>20166707</td>
       <td>&#xC7AC;&#xD0A4;</td>
+      <td>&#xD30C;&#xBE14;&#xB85C; &#xB77C;&#xB77C;&#xC778;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>887</th>
-      <td>0</td>
-      <td>&#xD669;&#xD48D;</td>
+      <th>77</th>
       <td>19730023</td>
       <td>&#xD751;&#xAD8C;</td>
+      <td>&#xD669;&#xD48D;</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>913</th>
-      <td>0</td>
-      <td>&#xBC15;&#xAD11;&#xD604;</td>
+      <th>78</th>
       <td>20150964</td>
       <td>&#xC870;&#xC791;&#xB41C; &#xB3C4;&#xC2DC;</td>
+      <td>&#xBC15;&#xAD11;&#xD604;</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -976,8 +1330,8 @@ movie_info_keys
 <span class="hljs-keyword">import</span> re
 <span class="hljs-keyword">import</span> requests
 
-naver_client_id = <span class="hljs-string">&quot;YO4i1JrH8SJibQryNA8j&quot;</span>
-naver_client_secret = <span class="hljs-string">&quot;gYKhYt564S&quot;</span>
+naver_client_id = <span class="hljs-string">&quot;nA8Iwm4HJ6EM2W1dueU9&quot;</span>
+naver_client_secret = <span class="hljs-string">&quot;HaEPQCPbyQ&quot;</span>
 
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">cleanhtml</span><span class="hljs-params">(raw_html)</span>:</span>
     cleanr = re.compile(<span class="hljs-string">&apos;&lt;.*?&gt;&apos;</span>)
@@ -1002,11 +1356,12 @@ naver_client_secret = <span class="hljs-string">&quot;gYKhYt564S&quot;</span>
 </code></pre>
 <pre><code class="lang-python"><span class="hljs-comment">#requests data &#xBD88;&#xB7EC;&#xC624;&#xAE30;</span>
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">findItemByInput</span><span class="hljs-params">(items)</span>:</span>
+
     n=len(items)
     <span class="hljs-comment">#print(&apos;n = &apos;,n)</span>
     <span class="hljs-keyword">for</span> index, item <span class="hljs-keyword">in</span> enumerate(items):
         navertitle = cleanhtml(item[<span class="hljs-string">&apos;title&apos;</span>])
- <span class="hljs-comment">#       naversubtitle = cleanhtml(item[&apos;subtitle&apos;])</span>
+        naversubtitle = cleanhtml(item[<span class="hljs-string">&apos;subtitle&apos;</span>])
  <span class="hljs-comment">#       naverpubdate = cleanhtml(item[&apos;pubDate&apos;])</span>
  <span class="hljs-comment">#       naveractor = cleanhtml(item[&apos;actor&apos;])</span>
         naverlink = cleanhtml(item[<span class="hljs-string">&apos;link&apos;</span>]) <span class="hljs-comment"># &#xC788;&#xC5B4;&#xC57C;&#xD568;</span>
@@ -1021,9 +1376,14 @@ naver_client_secret = <span class="hljs-string">&quot;gYKhYt564S&quot;</span>
 
         naverid = re.split(<span class="hljs-string">&quot;code=&quot;</span>, naverlink)[<span class="hljs-number">1</span>]  <span class="hljs-comment">#&#xB124;&#xC774;&#xBC84;&#xAC00; &#xB2E4;&#xB8E8;&#xB294; &#xC601;&#xD654; &#xACE0;&#xC720; ID&#xB97C; &#xC5BB;&#xC5B4; &#xC635;&#xB2C8;&#xB2E4;</span>
    <span class="hljs-comment">#     print(&apos;naveruserScore&apos;,naveruserScore)</span>
-        print(naveruserScore)
+<span class="hljs-comment">#         print(naveruserScore)</span>
+        a = pd insert(index,naveruserScore)
       <span class="hljs-comment">#  print(naverid, navertitle,naveruserScore, spScore)</span>
-      <span class="hljs-comment">#  print(index, navertitle, naversubtitle, naveruserScore, spScore)</span>
+        print(index, navertitle, naversubtitle, naveruserScore, spScore)
+<span class="hljs-comment">#         return a</span>
+</code></pre>
+<pre><code class="lang-python">
+
 </code></pre>
 <pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getInfoFromNaver</span><span class="hljs-params">(searchTitle)</span>:</span>
     items = searchByTitle(searchTitle)
@@ -1051,18 +1411,322 @@ naver_client_secret = <span class="hljs-string">&quot;gYKhYt564S&quot;</span>
     <span class="hljs-keyword">else</span>:
         <span class="hljs-keyword">return</span> <span class="hljs-number">0.0</span>
 </code></pre>
-<pre><code class="lang-python"><span class="hljs-keyword">for</span> r <span class="hljs-keyword">in</span> tqdm_notebook(range(<span class="hljs-number">10</span>)):
+<pre><code class="lang-python">i = movie_code_list_all[<span class="hljs-string">&apos;movieNm&apos;</span>][<span class="hljs-number">1</span>]
+findItemByInput(i)
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-113-8c9359a2a2bc&gt; in &lt;module&gt;
+      1 i = movie_code_list_all[&apos;movieNm&apos;][1]
+----&gt; 2 findItemByInput(i)
+
+
+&lt;ipython-input-110-61a3fe4ba632&gt; in findItemByInput(items)
+      5     #print(&apos;n = &apos;,n)
+      6     for index, item in enumerate(items):
+----&gt; 7         navertitle = cleanhtml(item[&apos;title&apos;])
+      8  #       naversubtitle = cleanhtml(item[&apos;subtitle&apos;])
+      9  #       naverpubdate = cleanhtml(item[&apos;pubDate&apos;])
+
+
+TypeError: string indices must be integers
+</code></pre><pre><code class="lang-python">name=movie_code_list_all.iloc[r,<span class="hljs-number">3</span>]
+name
+</code></pre>
+<pre><code>0
+</code></pre><pre><code class="lang-python">
+b=[]
+<span class="hljs-comment"># for r in tqdm_notebook(range(10)):</span>
+<span class="hljs-comment">#     print(&apos;r = &apos;,r)</span>
+
+name=movie_code_list_all[<span class="hljs-string">&apos;movieNm&apos;</span>][<span class="hljs-number">6</span>]
+print(<span class="hljs-string">&apos;name = &apos;</span>,name)  
+
+<span class="hljs-comment">#     a = getInfoFromNaver(name)   #&#xC774; &#xAC12;&#xC744; &#xBCC0;&#xC218;&#xC5D0; &#xB123;&#xC744; &#xC218;&#xAC00; &#xC5C6;&#xC74C; &#x3160;&#x3160; &#xB300;&#xC785;&#xC774; &#xC548;&#xB428;</span>
+
+items = searchByTitle(name)
+<span class="hljs-comment">#     for i in range(len(items)):</span>
+<span class="hljs-keyword">if</span> (items != <span class="hljs-keyword">None</span>):
+    b.append(findItemByInput(items))
+<span class="hljs-comment">#     findItemByInput(items)</span>
+<span class="hljs-keyword">else</span>:
+    print(<span class="hljs-string">&quot;No result&quot;</span>)
+
+<span class="hljs-comment"># movie_code_list_all</span>
+</code></pre>
+<pre><code>name =  &#xB8E8;&#xB3CC;&#xD504;&#xC640; &#xB9CE;&#xC774;&#xC788;&#xC5B4;
+0 &#xB8E8;&#xB3CC;&#xD504;&#xC640; &#xB9CE;&#xC774;&#xC788;&#xC5B4; Rudolf The Black Cat 8.79 6.38
+</code></pre><pre><code class="lang-python">b
+</code></pre>
+<pre><code>[None]
+</code></pre><pre><code class="lang-python"><span class="hljs-keyword">for</span> r <span class="hljs-keyword">in</span> tqdm_notebook(range(<span class="hljs-number">10</span>)):
     print(<span class="hljs-string">&apos;r = &apos;</span>,r)
 
-    name=movie_code_list_all.iloc[r,<span class="hljs-number">3</span>]
+    name=movie_code_list_all[<span class="hljs-string">&apos;movieNm&apos;</span>][r]
     print(<span class="hljs-string">&apos;name = &apos;</span>,name)  
 
     getInfoFromNaver(name)    <span class="hljs-comment">#&#xC774; &#xAC12;&#xC744; &#xBCC0;&#xC218;&#xC5D0; &#xB123;&#xC744; &#xC218;&#xAC00; &#xC5C6;&#xC74C; &#x3160;&#x3160; &#xB300;&#xC785;&#xC774; &#xC548;&#xB428;</span>
-
-
-movie_code_list_all
 </code></pre>
-<pre><code class="lang-python"><span class="hljs-comment">############### &#xB124;&#xC774;&#xBC84; api&#xB85C; &#xBCC4;&#xC810; &#xCD94;&#xCD9C;, def &#xC774;&#xC6A9;_2</span>
+<pre><code>HBox(children=(IntProgress(value=0, max=10), HTML(value=&apos;&apos;)))
+
+
+r =  0
+name =  &#xB9C8;&#xC2A4;&#xD130;
+2.60
+8.50
+0.00
+0.00
+0.00
+8.77
+10.00
+0.00
+0.00
+0.00
+8.10
+7.54
+7.73
+4.00
+0.00
+0.00
+0.00
+0.00
+7.24
+8.38
+8.33
+8.50
+7.00
+0.00
+0.00
+0.00
+0.00
+8.51
+8.67
+6.00
+3.57
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+6.00
+0.00
+8.03
+7.84
+9.67
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+7.91
+0.00
+0.00
+2.00
+0.00
+7.13
+8.75
+4.13
+0.00
+0.00
+0.00
+0.00
+8.00
+0.00
+0.00
+0.00
+10.00
+0.00
+9.38
+2.59
+8.00
+0.00
+0.00
+0.00
+0.00
+4.33
+9.00
+0.00
+7.33
+9.21
+0.00
+0.00
+0.00
+5.50
+0.00
+6.67
+2.75
+9.75
+0.00
+8.45
+6.36
+0.00
+4.40
+2.29
+8.00
+3.00
+0.00
+3.88
+9.00
+7.19
+r =  1
+name =  &#xB85C;&#xADF8; &#xC6D0;: &#xC2A4;&#xD0C0;&#xC6CC;&#xC988; &#xC2A4;&#xD1A0;&#xB9AC;
+8.44
+r =  2
+name =  &#xC53D;
+0.00
+7.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+8.96
+5.57
+9.00
+0.00
+0.00
+0.00
+0.00
+6.20
+8.12
+7.37
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+10.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+7.89
+10.00
+0.00
+0.00
+0.00
+0.00
+7.75
+0.00
+9.60
+5.81
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+8.31
+0.00
+0.00
+6.88
+2.60
+7.00
+0.00
+3.94
+1.00
+0.00
+5.76
+7.89
+7.00
+0.00
+0.00
+0.00
+6.15
+8.52
+0.00
+6.28
+6.55
+6.14
+4.25
+7.06
+7.12
+8.90
+0.00
+0.00
+8.95
+r =  3
+name =  &#xD310;&#xB3C4;&#xB77C;
+8.31
+10.00
+10.00
+10.00
+10.00
+5.50
+0.00
+7.75
+0.00
+0.00
+0.00
+0.00
+0.00
+6.03
+0.00
+0.00
+0.00
+1.67
+10.00
+0.00
+8.50
+7.80
+r =  4
+name =  &#xB77C;&#xB77C;&#xB79C;&#xB4DC;
+8.59
+0.00
+0.00
+r =  5
+name =  &#xB108;&#xC758; &#xC774;&#xB984;&#xC740;.
+8.75
+0.00
+8.00
+0.00
+r =  6
+name =  &#xB8E8;&#xB3CC;&#xD504;&#xC640; &#xB9CE;&#xC774;&#xC788;&#xC5B4;
+8.79
+r =  7
+name =  &#xD3EC;&#xCF13;&#xBAAC; &#xB354; &#xBB34;&#xBE44; XY&amp;Z &#x300C;&#xBCFC;&#xCF00;&#xB2C8;&#xC628; : &#xAE30;&#xACC4;&#xC655;&#xAD6D;&#xC758; &#xBE44;&#xBC00;&#x300D;
+8.75
+r =  8
+name =  &#xB2F9;&#xC2E0;, &#xAC70;&#xAE30; &#xC788;&#xC5B4;&#xC904;&#xB798;&#xC694;
+8.68
+r =  9
+name =  &#xADF9;&#xC7A5;&#xD310; &#xB3C4;&#xB77C;&#xC5D0;&#xBABD;: &#xC2E0; &#xC9C4;&#xAD6C;&#xC758; &#xBC84;&#xC2A4; &#xC624;&#xBE0C; &#xC7AC;&#xD32C;
+9.04
+</code></pre><pre><code class="lang-python"><span class="hljs-comment">############### &#xB124;&#xC774;&#xBC84; api&#xB85C; &#xBCC4;&#xC810; &#xCD94;&#xCD9C;, def &#xC774;&#xC6A9;_2</span>
 <span class="hljs-keyword">import</span> os
 <span class="hljs-keyword">import</span> sys
 <span class="hljs-keyword">import</span> urllib.request
@@ -1260,12 +1924,12 @@ client_secret = <span class="hljs-string">&quot;gYKhYt564S&quot;</span>
 
             
                 
-                <a href="2.html" class="navigation navigation-prev " aria-label="Previous page: 2. 데이터 준비">
+                <a href="3.1.html" class="navigation navigation-prev " aria-label="Previous page: 3-1 영화진흥위원회 OPENAPI 사용">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="3.1.html" class="navigation navigation-next " aria-label="Next page: 3-1 영화진흥위원회 OPENAPI 사용">
+                <a href="4.html" class="navigation navigation-next " aria-label="Next page: 4. 데이터 활용">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1276,7 +1940,7 @@ client_secret = <span class="hljs-string">&quot;gYKhYt564S&quot;</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3. 데이터 가공","level":"1.1.3","depth":2,"next":{"title":"3-1 영화진흥위원회 OPENAPI 사용","level":"1.1.4","depth":2,"path":"3.1.md","ref":"3.1.md","articles":[]},"previous":{"title":"2. 데이터 준비","level":"1.1.2","depth":2,"path":"2.md","ref":"2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3.md","mtime":"2019-01-03T05:12:25.001Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-03T07:17:51.004Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3-2 영화진흥위원회 OPENAPI 사용2","level":"1.1.5","depth":2,"next":{"title":"4. 데이터 활용","level":"1.1.6","depth":2,"path":"4.md","ref":"4.md","articles":[]},"previous":{"title":"3-1 영화진흥위원회 OPENAPI 사용","level":"1.1.4","depth":2,"path":"3.1.md","ref":"3.1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3.2.md","mtime":"2019-01-03T05:12:25.001Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-03T07:17:51.004Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
